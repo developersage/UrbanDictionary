@@ -16,6 +16,7 @@ import com.sangdo.whattoeat.ui.theme.WhatToEatTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        MobileAds.initialize(this)
 
         setContent {
             WhatToEatTheme {
