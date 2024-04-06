@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.sangdo.whattoeat'
+    namespace 'com.sangdo.urbandictionary'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.sangdo.whattoeat"
+        applicationId "com.sangdo.urbandictionary"
         minSdk 28
         targetSdk 33
         versionCode 1
