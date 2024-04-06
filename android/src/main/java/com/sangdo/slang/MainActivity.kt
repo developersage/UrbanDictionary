@@ -1,4 +1,4 @@
-package com.sangdo.whattoeat
+package com.sangdo.slang
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.google.android.gms.ads.MobileAds
-import com.sangdo.whattoeat.ui.theme.WhatToEatTheme
+import com.sangdo.slang.ui.theme.WhatToEatTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

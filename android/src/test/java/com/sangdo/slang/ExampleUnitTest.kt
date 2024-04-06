@@ -1,4 +1,4 @@
-package com.sangdo.whattoeat
+package com.sangdo.slang
 
 import org.junit.Test
 

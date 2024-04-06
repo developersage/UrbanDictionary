@@ -1,4 +1,4 @@
-package com.sangdo.whattoeat.ui.theme
+package com.sangdo.slang.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

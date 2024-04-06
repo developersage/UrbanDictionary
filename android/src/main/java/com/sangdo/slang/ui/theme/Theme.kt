@@ -1,4 +1,4 @@
-package com.sangdo.whattoeat.ui.theme
+package com.sangdo.slang.ui.theme
 
 import android.app.Activity
 import android.os.Build
