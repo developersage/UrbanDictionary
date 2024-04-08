@@ -2,13 +2,70 @@
 minSdk = "28"
 targetSdk = "33"
 compileSdk = "34"
+androidGradlePlugin = "8.3.1"
+kotlin = "1.9.0"
 koin-bom = "3.5.3"
+googleMobileService = "23.0.0"
+androidCompose = "2024.04.00"
+junit = "4.13.2"
+core-ktx = "1.12.0"
+lifecycle = "2.7.0"
+activity = "1.8.2"
+appCompat = "1.6.1"
 
-[libraries]
-koin-bom = { module = "io.insert-koin:koin-bom", version.ref = "koin-bom" }
-koin-core = { module = "io.insert-koin:koin-core" }
+
+
 
 [plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
+android-library = { id = "com.android.library", version.ref = "androidGradlePlugin" }
+jetbrain-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+
+
+
+
+[libraries]
+# Google Mobile Service
+play-service = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "googleMobileService" }
+
+# Androidx
+androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+androidx-appCompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
+androidx-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "activity" }
+
+# Dependency Injection
+koin-bom = { group = "io.insert-koin", name = "koin-bom", version.ref = "koin-bom" }
+koin-core = { group = "io.insert-koin", name = "koin-core" }
+
+# User Interface
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidCompose" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-graphic = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-tooling = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+
+# JUnit
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit" }
+
+# Compose Test
+compose-test-junit = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-test-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+
+
+
 
 
 [bundles]
+androidx = ["androidx-lifecycle", "androidx-activity"]
+compose = ["compose-ui", "compose-graphic", "compose-tooling", "compose-material3"]
+
+junitBundle = ["androidx-junit"]
+composeTest = ["compose-test-tooling", "compose-test-manifest"]
+
+
+
+
