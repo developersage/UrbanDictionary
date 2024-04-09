@@ -1,4 +1,4 @@
-package com.sangdo.slang
+package com.sangdo.urban
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

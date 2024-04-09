@@ -1,4 +1,4 @@
-package com.sangdo.slang
+package com.sangdo.urban
 
 import org.junit.Test
 

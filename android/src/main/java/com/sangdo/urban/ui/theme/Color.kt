@@ -1,4 +1,4 @@
-package com.sangdo.slang.ui.theme
+package com.sangdo.urban.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
