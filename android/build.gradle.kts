@@ -1,8 +1,11 @@
 import com.android.build.api.dsl.Packaging
 
 plugins {
+    kotlin("kapt")
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrain.kotlin)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.google.hilt)
 }
 
 android {
@@ -31,6 +34,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions { jvmTarget = "1.8" }
+    kapt { correctErrorTypes = true }
     buildFeatures { compose = true }
     composeOptions { kotlinCompilerExtensionVersion = "1.5.0" }
 
@@ -43,15 +47,19 @@ dependencies {
 
     implementation(project(":network"))
 
-    implementation(libs.play.service)
+    implementation(libs.google.ads)
+
+    implementation(platform(libs.google.bom))
+    implementation(libs.bundles.google)
+
     implementation(libs.androidx.core)
     implementation(libs.bundles.androidx)
 
+    kapt(libs.kapt.hilt)
+    implementation(libs.google.hilt)
+
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
-
-    implementation(platform(libs.koin.bom))
-    implementation(libs.koin.core)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.bundles.junitBundle)
