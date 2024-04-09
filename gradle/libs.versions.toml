@@ -11,15 +11,18 @@ hilt = "2.44"
 googleService = "4.4.1"
 playService = "23.0.0"
 
-# Dependencies
+# Dependencies - Bill of Materials
 googleBOM = "32.8.0"
-androidCompose = "2024.04.00"
+squareUpBOM = "4.12.0"
+androidxComposeBOM = "2024.04.00"
+
+# Dependencies
 junit = "4.13.2"
 core-ktx = "1.12.0"
 lifecycle = "2.7.0"
 activity = "1.8.2"
 appCompat = "1.6.1"
-
+retrofit = "2.11.0"
 
 
 
@@ -52,8 +55,14 @@ androidx-activity = { group = "androidx.activity", name = "activity-compose", ve
 google-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 kapt-hilt = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
 
+# Network Client
+okhttp-bom = { group = "com.squareup.okhttp3", name = "okhttp-bom", version.ref = "squareUpBOM" }
+okhttp-client = { group = "com.squareup.okhttp3", name = "okhttp" }
+okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+
 # User Interface
-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidCompose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidxComposeBOM" }
 compose-ui = { group = "androidx.compose.ui", name = "ui" }
 compose-graphic = { group = "androidx.compose.ui", name = "ui-graphics" }
 compose-tooling = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
@@ -76,6 +85,7 @@ compose-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifes
 androidx = ["androidx-lifecycle", "androidx-activity"]
 google = ["google-firebase", "google-crashlytics"]
 compose = ["compose-ui", "compose-graphic", "compose-tooling", "compose-material3"]
+network = ["okhttp-client", "okhttp-logging", "retrofit" ]
 
 junitBundle = ["androidx-junit"]
 composeTest = ["compose-test-tooling", "compose-test-manifest"]

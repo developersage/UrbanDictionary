@@ -1,7 +1,13 @@
+import java.util.Properties
+
 plugins {
+    kotlin("kapt")
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrain.kotlin)
 }
+
+val property = Properties()
+    .apply { load(project.rootProject.file("apikeys.properties").inputStream()) }
 
 android {
     namespace = "com.sangdo.network"
@@ -10,6 +16,9 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        buildFeatures.buildConfig = true
+
+        buildConfigField("String", "X_RapidAPI_Key", property.getProperty("X-RapidAPI-Key"))
     }
 
     buildTypes {
@@ -35,6 +44,12 @@ dependencies {
     implementation(libs.androidx.core)
     // implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0")) is this needed?
     implementation(libs.androidx.appCompat)
+
+    kapt(libs.kapt.hilt)
+    implementation(libs.google.hilt)
+
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.bundles.network)
 
     testImplementation(libs.junit)
 }
