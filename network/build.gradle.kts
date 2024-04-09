@@ -4,6 +4,7 @@ plugins {
     kotlin("kapt")
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrain.kotlin)
+    alias(libs.plugins.google.hilt)
 }
 
 val property = Properties()

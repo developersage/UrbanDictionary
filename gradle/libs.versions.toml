@@ -7,7 +7,7 @@ compileSdk = "34"
 # Plug ins
 androidGradle = "8.3.1"
 kotlin = "1.9.0"
-hilt = "2.44"
+hilt = "2.48"
 googleService = "4.4.1"
 playService = "23.0.0"
 
