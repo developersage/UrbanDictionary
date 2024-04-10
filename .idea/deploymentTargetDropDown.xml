@@ -2,6 +2,12 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
+      <entry key="GreetingPreview">
+        <State />
+      </entry>
+      <entry key="UrbanComposePreview">
+        <State />
+      </entry>
       <entry key="android">
         <State>
           <targetSelectedWithDropDown>
@@ -17,9 +23,6 @@
           </targetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-04-10T03:08:15.226578700Z" />
         </State>
-      </entry>
-      <entry key="network">
-        <State />
       </entry>
     </value>
   </component>
