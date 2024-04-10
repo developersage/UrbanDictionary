@@ -47,7 +47,7 @@ android {
 dependencies {
 
     implementation(project(":network"))
-    implementation(project(":compose"))
+    implementation(project(":feature"))
 
     implementation(libs.google.ads)
 

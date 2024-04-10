@@ -10,7 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/android" />
-            <option value="$PROJECT_DIR$/compose" />
+            <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/network" />
           </set>
         </option>

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.sangdo.compose"
+    namespace = "com.sangdo.feature"
     compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
