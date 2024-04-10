@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "882174764329",
+    "project_id": "urban-dictionary-34d54",
+    "storage_bucket": "urban-dictionary-34d54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882174764329:android:eb49236a7acbade0e08338",
+        "android_client_info": {
+          "package_name": "com.sangdo.urban"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyZ-bCWzbxuZA3EJsuAwhe1FxJCNwtdfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
