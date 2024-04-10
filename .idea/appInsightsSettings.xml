@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.sangdo.urban" />
+                  <option name="mobileSdkAppId" value="1:882174764329:android:eb49236a7acbade0e08338" />
+                  <option name="projectId" value="urban-dictionary-34d54" />
+                  <option name="projectNumber" value="882174764329" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
