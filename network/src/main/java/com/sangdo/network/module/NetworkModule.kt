@@ -45,11 +45,11 @@ class NetworkModule {
     fun provideUrbanDictionaryService(
         @UrbanDictionaryURL baseUrl: String,
         @RapidOkHttpClient okHttpClient: OkHttpClient
-    ) = Retrofit.Builder()
+    ): UrbanDictionaryService = Retrofit.Builder()
         .baseUrl(baseUrl)
         .addConverterFactory(MoshiConverterFactory.create())
         .client(okHttpClient)
         .build()
-        // .create()
+        .create(UrbanDictionaryService::class.java)
 
 }
