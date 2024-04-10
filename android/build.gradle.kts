@@ -3,7 +3,7 @@ import com.android.build.api.dsl.Packaging
 plugins {
     kotlin("kapt")
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrain.kotlin)
+    alias(libs.plugins.jetbrains.kotlin)
     alias(libs.plugins.google.services)
     alias(libs.plugins.google.crashlytics)
     alias(libs.plugins.google.hilt)
