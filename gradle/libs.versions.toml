@@ -9,6 +9,7 @@ androidGradle = "8.3.1"
 kotlin = "1.9.0"
 hilt = "2.48"
 googleService = "4.4.1"
+googleCrashlytics = "2.9.9"
 playService = "23.0.0"
 
 # Dependencies - Bill of Materials
@@ -23,7 +24,7 @@ lifecycle = "2.7.0"
 activity = "1.8.2"
 appCompat = "1.6.1"
 retrofit = "2.11.0"
-moshi = "1.15.0"
+
 
 
 
@@ -34,6 +35,7 @@ android-library = { id = "com.android.library", version.ref = "androidGradle" }
 jetbrain-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 google-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleService" }
+google-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "googleCrashlytics" }
 
 
 
