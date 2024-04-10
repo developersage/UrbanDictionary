@@ -19,7 +19,8 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         buildFeatures.buildConfig = true
 
-        buildConfigField("String", "X_RapidAPI_Key", property.getProperty("X-RapidAPI-Key"))
+        buildConfigField("String", "URBAN_API_Key", property.getProperty("X-RapidAPI-Key"))
+        buildConfigField("String", "URBAN_API_Host", "\"mashape-community-urban-dictionary.p.rapidapi.com\"")
     }
 
     buildTypes {
