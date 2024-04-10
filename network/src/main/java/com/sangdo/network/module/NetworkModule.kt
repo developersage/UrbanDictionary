@@ -19,15 +19,16 @@ class NetworkModule {
     @Provides
     @Reusable
     @HeaderInterceptor
-    fun provideHeaderInterceptor(@AuthHeader authHeader: Map<String, String>): Interceptor =
-        Interceptor { chain ->
-            chain.proceed(
-                Request.Builder().run {
-                    authHeader.forEach { (key, value) -> addHeader(key, value) }
-                    build()
-                }
-            )
-        }
+    fun provideHeaderInterceptor(
+        @AuthHeader authHeader: Map<String, String>
+    ): Interceptor = Interceptor { chain ->
+        chain.proceed(
+            Request.Builder().run {
+                authHeader.forEach { (key, value) -> addHeader(key, value) }
+                build()
+            }
+        )
+    }
 
     @Provides
     @Reusable
