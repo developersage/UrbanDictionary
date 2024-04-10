@@ -1,7 +1,6 @@
 package com.sangdo.feature
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.systemBarsPadding
@@ -14,13 +13,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.sangdo.feature.ui.theme.Pink80
-import com.sangdo.feature.ui.theme.Purple80
-import com.sangdo.network.model.UrbanDetails
-import com.sangdo.network.model.UrbanModel
+import com.sangdo.repository.model.UrbanModel
 
 @Composable
 fun DictionaryList(
-    model: UrbanModel,
+    list: List<UrbanModel>,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(
@@ -29,8 +26,8 @@ fun DictionaryList(
             .systemBarsPadding()
             .background(Pink80)
     ) {
-        items(model.list) {detail ->
-            detail
+        items(list) { detail ->
+            detail.word
         }
     }
 }
