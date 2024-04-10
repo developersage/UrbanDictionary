@@ -23,6 +23,7 @@ android {
 
 dependencies {
 
+    implementation(project(":network"))
     implementation(libs.androidx.appCompat)
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)

@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "UrbanDictionary"
-include(":android", ":network", ":feature")
+include(":android", ":network", ":feature", ":repository")
