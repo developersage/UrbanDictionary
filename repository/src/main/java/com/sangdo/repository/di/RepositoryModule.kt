@@ -1,7 +1,7 @@
-package com.sangdo.urban.di
+package com.sangdo.repository.di
 
-import com.sangdo.urban.repository.SangdoUrbanRepository
-import com.sangdo.urban.repository.UrbanRepository
+import com.sangdo.repository.SangdoUrbanRepository
+import com.sangdo.repository.UrbanRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
