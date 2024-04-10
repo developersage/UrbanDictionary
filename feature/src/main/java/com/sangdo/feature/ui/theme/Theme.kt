@@ -1,4 +1,4 @@
-package com.sangdo.urban.ui.theme
+package com.sangdo.feature.ui.theme
 
 import android.app.Activity
 import android.os.Build
