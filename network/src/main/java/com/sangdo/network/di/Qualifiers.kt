@@ -1,10 +1,14 @@
-package com.sangdo.network.module
+package com.sangdo.network.di
 
 import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
 annotation class UrbanDictionaryURL
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class UrbanDictionaryKEY
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)

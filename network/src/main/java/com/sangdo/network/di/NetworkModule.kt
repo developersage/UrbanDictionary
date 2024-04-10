@@ -1,5 +1,6 @@
-package com.sangdo.network.module
+package com.sangdo.network.di
 
+import com.sangdo.network.UrbanDictionaryService
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -17,7 +18,9 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 class NetworkModule {
 
     @Provides
-    @Reusable
+    fun provideLoggingInterceptor() = HttpLoggingInterceptor()
+
+    @Provides
     @HeaderInterceptor
     fun provideHeaderInterceptor(
         @AuthHeader authHeader: Map<String, String>
@@ -31,18 +34,16 @@ class NetworkModule {
     }
 
     @Provides
-    @Reusable
     @RapidOkHttpClient
     fun provideOkHttpClient(
         @HeaderInterceptor headerInterceptor: Interceptor,
-        loggingInterceptor: HttpLoggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient = OkHttpClient.Builder()
         .addInterceptor(headerInterceptor)
         .addNetworkInterceptor(loggingInterceptor)
         .build()
 
     @Provides
-    @Reusable
     fun provideUrbanDictionaryService(
         @UrbanDictionaryURL baseUrl: String,
         @RapidOkHttpClient okHttpClient: OkHttpClient

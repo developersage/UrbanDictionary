@@ -1,7 +1,7 @@
 package com.sangdo.urban.viewmodel
 
 import androidx.lifecycle.viewModelScope
-import com.sangdo.network.module.UrbanModel
+import com.sangdo.network.model.UrbanModel
 import com.sangdo.urban.repository.UrbanRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.launchIn

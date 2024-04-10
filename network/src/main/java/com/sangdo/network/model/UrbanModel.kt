@@ -1,4 +1,4 @@
-package com.sangdo.network.module
+package com.sangdo.network.model
 
 import com.squareup.moshi.Json
 

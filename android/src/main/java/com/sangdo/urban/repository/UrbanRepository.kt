@@ -1,7 +1,7 @@
 package com.sangdo.urban.repository
 
-import com.sangdo.network.module.UrbanDictionaryService
-import com.sangdo.network.module.UrbanModel
+import com.sangdo.network.UrbanDictionaryService
+import com.sangdo.network.model.UrbanModel
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
