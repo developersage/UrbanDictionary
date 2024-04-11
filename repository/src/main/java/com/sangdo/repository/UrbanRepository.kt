@@ -4,18 +4,23 @@ import com.sangdo.network.UrbanDictionaryService
 import com.sangdo.network.data.UrbanDictionaryData
 import com.sangdo.repository.model.UrbanModel
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.mapNotNull
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 class SangdoUrbanRepository @Inject constructor(
     private val urbanDictionaryService: UrbanDictionaryService,
 ) : UrbanRepository {
 
-    override fun getDefinition(word: String) = urbanDictionaryService.define(word)
-        .mapNotNull { response -> response.toListOfUrbanModel() }
+    override fun getDefinition(word: String) = flow {
+        urbanDictionaryService.define(word)
+            .run {
+                if (isSuccessful) emit(body().toListOfUrbanModel())
+                else throw Exception("Error")
+            }
+    }
 
-    private fun UrbanDictionaryData.toListOfUrbanModel() = list
+    private fun UrbanDictionaryData?.toListOfUrbanModel() = this
+        ?.list
         ?.map { detail ->
             detail.run {
                 UrbanModel(
