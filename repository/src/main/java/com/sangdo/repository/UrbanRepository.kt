@@ -15,7 +15,7 @@ class SangdoUrbanRepository @Inject constructor(
     override fun getDefinition(word: String) = urbanDictionaryService.define(word)
         .mapNotNull { response -> response.toListOfUrbanModel() }
 
-    private fun UrbanDictionaryData.toListOfUrbanModel(): List<UrbanModel> = list
+    private fun UrbanDictionaryData.toListOfUrbanModel() = list
         ?.map { detail ->
             detail.run {
                 UrbanModel(
