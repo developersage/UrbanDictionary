@@ -1,6 +1,9 @@
 package com.sangdo.feature
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.systemBarsPadding
@@ -27,26 +30,37 @@ fun DictionaryList(
             .background(Pink80)
     ) {
         items(list) { detail ->
-            detail.word
+            DictionaryRow(item = detail)
         }
     }
 }
 
 @Composable
 fun DictionaryRow(
+    item: UrbanModel,
     modifier: Modifier = Modifier
-) {
+) = with(item) {
     Card(
         modifier
             .wrapContentHeight()
             .fillMaxWidth()
     ) {
-        Text(text = "asdf")
+        Row {
+            Column {
+                Text(text = word)
+                Text(text = author)
+                Text(text = definition)
+                Text(text = example)
+            }
+            Spacer(modifier.weight(1f))
+            Text(text = thumbsUp)
+            Text(text = thumbsDown)
+        }
     }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun UrbanComposePreview() {
-    DictionaryRow()
+    DictionaryRow(UrbanModel("word", "author","definition", "example","100","1"))
 }
