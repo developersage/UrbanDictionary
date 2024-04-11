@@ -12,7 +12,7 @@ class ConstantModule {
 
     @Provides
     @UrbanDictionaryURL
-    fun provideUrbanDictionaryBaseURL() = BuildConfig.URBAN_API_Host
+    fun provideUrbanDictionaryBaseURL() = "https://" + BuildConfig.URBAN_API_Host
 
     @Provides
     @UrbanDictionaryKEY
