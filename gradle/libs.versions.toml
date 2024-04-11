@@ -52,6 +52,7 @@ google-ads = { group = "com.google.android.gms", name = "play-services-ads", ver
 androidx-core = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 androidx-appCompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appCompat" }
 androidx-lifecycle = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-viewModel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
 androidx-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "activity" }
 
 # Dependency Injection
@@ -86,7 +87,7 @@ compose-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifes
 
 
 [bundles]
-androidx = ["androidx-lifecycle", "androidx-activity"]
+androidx = ["androidx-lifecycle", "androidx-viewModel", "androidx-activity"]
 google = ["google-firebase", "google-crashlytics"]
 compose = ["compose-ui", "compose-graphic", "compose-tooling", "compose-material3"]
 network = ["okhttp-client", "okhttp-logging", "retrofit", "moshi" ]
