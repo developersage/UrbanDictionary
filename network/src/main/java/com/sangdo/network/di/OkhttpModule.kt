@@ -1,8 +1,5 @@
-package com.sangdo.network
+package com.sangdo.network.di
 
-import com.sangdo.network.di.AuthHeader
-import com.sangdo.network.di.HeaderInterceptor
-import com.sangdo.network.di.RapidOkHttpClient
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

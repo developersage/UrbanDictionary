@@ -23,7 +23,8 @@ class NetworkModule {
         .create(UrbanDictionaryService::class.java)
 
     @Provides
-    fun provideUrbanDictionaryClient(service: UrbanDictionaryService) =
-        UrbanDictionaryClient(service)
+    fun provideUrbanDictionaryClient(
+        service: UrbanDictionaryService
+    ) = UrbanDictionaryClient(service)
 
 }
