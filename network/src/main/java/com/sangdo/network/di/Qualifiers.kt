@@ -4,7 +4,11 @@ import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class UrbanDictionaryURL
+annotation class RapidAPIBaseURL
+
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class UrbanDictionaryHOST
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)

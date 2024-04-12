@@ -1,11 +1,14 @@
 package com.sangdo.network.data
 
 import com.squareup.moshi.Json
+import com.squareup.moshi.JsonClass
 
+@JsonClass(generateAdapter = true)
 data class UrbanDictionaryData(
     val list: List<UrbanDictionaryDetails>?
 )
 
+@JsonClass(generateAdapter = true)
 data class UrbanDictionaryDetails(
     val definition: String?,
     val permalink: String?,

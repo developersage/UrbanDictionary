@@ -4,7 +4,9 @@ import androidx.lifecycle.viewModelScope
 import com.sangdo.repository.UrbanRepository
 import com.sangdo.repository.model.UrbanModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onEach
@@ -16,15 +18,15 @@ class UrbanViewModel @Inject constructor(
     private val repository: UrbanRepository
 ) : SangdoViewModel() {
     val isLoading = mutableStateFlowOf(false)
-    val data = mutableStateFlowOf<List<UrbanModel>>(emptyList())
+    val definitionList = mutableStateFlowOf<List<UrbanModel>>(emptyList())
 
     fun search(word: String) {
         repository.getDefinition(word)
+            .flowOn(Dispatchers.IO)
             .onStart { isLoading.next = true }
-            .onEach { list -> data.next = list }
-            .catch { /* take no action for now */ }
+            .onEach { list -> definitionList.next = list }
+            .catch { error -> error.printStackTrace() }
             .onCompletion { isLoading.next = false }
             .launchIn(viewModelScope)
     }
-
 }

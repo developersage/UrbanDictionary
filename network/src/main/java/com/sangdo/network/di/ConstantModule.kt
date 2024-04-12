@@ -11,8 +11,12 @@ import dagger.hilt.components.SingletonComponent
 class ConstantModule {
 
     @Provides
-    @UrbanDictionaryURL
-    fun provideUrbanDictionaryBaseURL() = "https://" + BuildConfig.URBAN_API_Host
+    @RapidAPIBaseURL
+    fun provideRapidAPIBaseURL() = "https://" + BuildConfig.URBAN_API_Host
+
+    @Provides
+    @UrbanDictionaryHOST
+    fun provideUrbanDictionaryHost() = BuildConfig.URBAN_API_Host
 
     @Provides
     @UrbanDictionaryKEY
@@ -22,9 +26,9 @@ class ConstantModule {
     @AuthHeader
     fun provideRapidHeaderMap(
         @UrbanDictionaryKEY rapidAPIKey: String,
-        @UrbanDictionaryURL rapidAPIHost: String,
+        @UrbanDictionaryHOST rapidAPIHost: String,
     ) = mapOf(
+        "X-RapidAPI-Host" to rapidAPIHost,
         "X-RapidAPI-Key" to rapidAPIKey,
-        "X-RapidAPI-Host" to rapidAPIHost
     )
 }
