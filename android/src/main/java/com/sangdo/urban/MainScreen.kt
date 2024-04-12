@@ -28,7 +28,7 @@ import com.sangdo.urban.viewmodel.UrbanViewModel
 fun MainScreen(
     viewModel: UrbanViewModel = viewModel()
 ) {
-    val list by viewModel.data.collectAsState()
+    val list by viewModel.definitionList.collectAsState()
     Scaffold(
         topBar = { SearchBar(onSearch = viewModel::search) },
         modifier = Modifier

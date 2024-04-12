@@ -38,6 +38,7 @@ dependencies {
     kapt(libs.kapt.hilt)
     implementation(libs.google.hilt)
 
+    kapt(libs.kapt.moshi)
     implementation(platform(libs.okhttp.bom))
     implementation(libs.bundles.network)
 
