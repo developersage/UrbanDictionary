@@ -1,4 +1,4 @@
-package com.sangdo.urban.viewmodel
+package com.sangdo.feature.viewmodel
 
 import androidx.lifecycle.viewModelScope
 import com.sangdo.repository.UrbanRepository

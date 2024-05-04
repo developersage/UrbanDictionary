@@ -30,13 +30,10 @@ android {
 }
 
 dependencies {
-
-    implementation(libs.androidx.core)
-    // implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0")) is this needed?
-    implementation(libs.androidx.appCompat)
-
     kapt(libs.kapt.hilt)
     implementation(libs.google.hilt)
+
+    implementation(libs.bundles.androidx.core)
 
     kapt(libs.kapt.moshi)
     implementation(platform(libs.okhttp.bom))

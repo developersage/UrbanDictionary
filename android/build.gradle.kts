@@ -46,22 +46,15 @@ android {
 
 dependencies {
 
-    implementation(project(":repository"))
     implementation(project(":feature"))
-
-    implementation(libs.google.ads)
-
-    implementation(platform(libs.google.bom))
-    implementation(libs.bundles.google)
-
-    implementation(libs.androidx.core)
-    implementation(libs.bundles.androidx)
 
     kapt(libs.kapt.hilt)
     implementation(libs.google.hilt)
 
-    implementation(platform(libs.compose.bom))
-    implementation(libs.bundles.compose)
+    implementation(libs.google.ads)
+
+    implementation(libs.bundles.androidx)
+    implementation(libs.bundles.androidx.core)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.bundles.junitBundle)

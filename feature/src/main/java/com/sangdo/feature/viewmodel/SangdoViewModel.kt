@@ -1,4 +1,4 @@
-package com.sangdo.urban.viewmodel
+package com.sangdo.feature.viewmodel
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow

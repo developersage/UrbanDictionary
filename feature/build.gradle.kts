@@ -1,6 +1,10 @@
 plugins {
+    kotlin("kapt")
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin)
+    alias(libs.plugins.google.services)
+    alias(libs.plugins.google.crashlytics)
+    alias(libs.plugins.google.hilt)
 }
 
 android {
@@ -24,7 +28,18 @@ android {
 dependencies {
 
     implementation(project(":repository"))
-    implementation(libs.androidx.appCompat)
+
+    kapt(libs.kapt.hilt)
+    implementation(libs.google.hilt)
+
+    implementation(libs.google.ads)
+
+    implementation(platform(libs.google.bom))
+    implementation(libs.bundles.google)
+
+    implementation(libs.bundles.androidx)
+    implementation(libs.bundles.androidx.core)
+
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
 

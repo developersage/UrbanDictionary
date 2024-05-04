@@ -92,6 +92,7 @@ compose-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifes
 
 [bundles]
 androidx = ["androidx-lifecycle", "androidx-viewModel", "androidx-activity"]
+androidx-core = ["androidx-core", "androidx-appCompat"]
 google = ["google-firebase", "google-crashlytics"]
 compose = ["compose-ui", "compose-graphic", "compose-tooling", "compose-material3"]
 network = ["okhttp-client", "okhttp-logging", "retrofit", "retrofit-moshi"]
