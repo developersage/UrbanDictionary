@@ -53,6 +53,9 @@ dependencies {
 
     implementation(libs.google.ads)
 
+    implementation(platform(libs.google.bom))
+    implementation(libs.bundles.google)
+
     implementation(libs.bundles.androidx)
     implementation(libs.bundles.androidx.core)
 
