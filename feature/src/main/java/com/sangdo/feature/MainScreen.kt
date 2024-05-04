@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.material3.Button
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -29,13 +30,16 @@ fun MainScreen(
     viewModel: UrbanViewModel = viewModel()
 ) {
     val list by viewModel.definitionList.collectAsState()
+    val isLoading by viewModel.isLoading.collectAsState()
+
     Scaffold(
         topBar = { SearchBar(onSearch = viewModel::search) },
-
+        bottomBar = { AdBanner(adRequest = viewModel.adRequest) },
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
     ) { bottomPadding ->
         DictionaryList(list = list, modifier = Modifier.padding(bottomPadding))
     }
+    if (isLoading) CircularProgressIndicator()
 }

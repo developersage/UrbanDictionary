@@ -1,6 +1,7 @@
 package com.sangdo.feature.viewmodel
 
 import androidx.lifecycle.viewModelScope
+import com.google.android.gms.ads.AdRequest
 import com.sangdo.repository.UrbanRepository
 import com.sangdo.repository.model.UrbanModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,7 +16,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class UrbanViewModel @Inject constructor(
-    private val repository: UrbanRepository
+    private val repository: UrbanRepository,
+    val adRequest: AdRequest
 ) : SangdoViewModel() {
     val isLoading = mutableStateFlowOf(false)
     val definitionList = mutableStateFlowOf<List<UrbanModel>>(emptyList())
