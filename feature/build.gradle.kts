@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     kotlin("kapt")
     alias(libs.plugins.android.library)
@@ -7,6 +9,9 @@ plugins {
     alias(libs.plugins.google.hilt)
 }
 
+val property = Properties()
+    .apply { load(project.rootProject.file("apikeys.properties").inputStream()) }
+
 android {
     namespace = "com.sangdo.feature"
     compileSdk = libs.versions.compileSdk.get().toInt()
@@ -14,6 +19,9 @@ android {
     defaultConfig {
         minSdk = libs.versions.minSdk.get().toInt()
         vectorDrawables { useSupportLibrary = true }
+        buildFeatures.buildConfig = true
+
+        buildConfigField("String", "AdUnitId", property.getProperty("Ad-Unit-ID"))
     }
 
     buildFeatures { compose = true }

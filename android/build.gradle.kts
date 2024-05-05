@@ -1,4 +1,5 @@
 import com.android.build.api.dsl.Packaging
+import java.util.Properties
 
 plugins {
     kotlin("kapt")
@@ -8,6 +9,9 @@ plugins {
     alias(libs.plugins.google.crashlytics)
     alias(libs.plugins.google.hilt)
 }
+
+val property = Properties()
+    .apply { load(project.rootProject.file("apikeys.properties").inputStream()) }
 
 android {
     namespace = "com.sangdo.urban"
@@ -22,6 +26,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables { useSupportLibrary = true }
+
+        resValue("string", "AdUnitId", property.getProperty("Ad-Unit-ID"))
     }
 
     buildTypes {

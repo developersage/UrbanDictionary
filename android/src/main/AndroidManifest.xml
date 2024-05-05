@@ -21,7 +21,7 @@
             tools:replace="android:resource" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3926306702817572~3394052504"
+            android:value="@string/AdUnitId"
             >
 
         </meta-data>
