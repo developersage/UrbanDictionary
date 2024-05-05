@@ -21,10 +21,7 @@
             tools:replace="android:resource" />
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="@string/AdUnitId"
-            >
-
-        </meta-data>
+            android:value="@string/AdUnitId" />
 
         <activity
             android:name=".MainActivity"
