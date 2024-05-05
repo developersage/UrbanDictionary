@@ -2,6 +2,7 @@ package com.sangdo.feature.viewmodel
 
 import androidx.lifecycle.viewModelScope
 import com.google.android.gms.ads.AdRequest
+import com.sangdo.feature.di.AdUnitId
 import com.sangdo.repository.UrbanRepository
 import com.sangdo.repository.model.UrbanModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,10 +18,16 @@ import javax.inject.Inject
 @HiltViewModel
 class UrbanViewModel @Inject constructor(
     private val repository: UrbanRepository,
-    val adRequest: AdRequest
+    @AdUnitId adUnitId: String,
+    adRequest: AdRequest
 ) : SangdoViewModel() {
     val isLoading = mutableStateFlowOf(false)
+    val adState = mutableStateFlowOf<AdParams>(AdParams.Loading)
     val definitionList = mutableStateFlowOf<List<UrbanModel>>(emptyList())
+
+    init {
+        adState.next = AdParams.Ready(adUnitId, adRequest)
+    }
 
     fun search(word: String) {
         repository.getDefinition(word)
@@ -30,5 +37,13 @@ class UrbanViewModel @Inject constructor(
             .catch { error -> error.printStackTrace() }
             .onCompletion { isLoading.next = false }
             .launchIn(viewModelScope)
+    }
+
+    sealed interface AdParams {
+        data object Loading : AdParams
+        data class Ready(
+            val adUnitId: String,
+            val adRequest: AdRequest
+        ) : AdParams
     }
 }

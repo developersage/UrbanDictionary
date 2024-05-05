@@ -22,10 +22,14 @@ fun MainScreen(
 ) {
     val list by viewModel.definitionList.collectAsState()
     val isLoading by viewModel.isLoading.collectAsState()
+    val adState by viewModel.adState.collectAsState()
 
     Scaffold(
         topBar = { SearchBar(onSearch = viewModel::search) },
-        bottomBar = { AdBanner(adRequest = viewModel.adRequest) },
+        bottomBar = {
+            (adState as? UrbanViewModel.AdParams.Ready)
+                ?.let { (id, request) -> AdBanner(id = id, adRequest = request) }
+        },
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)

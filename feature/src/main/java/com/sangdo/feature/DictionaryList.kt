@@ -23,10 +23,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.sangdo.feature.ui.theme.Pink40
-import com.sangdo.feature.ui.theme.Pink80
 import com.sangdo.feature.ui.theme.Purple40
 import com.sangdo.feature.ui.theme.Purple80
+import com.sangdo.feature.ui.theme.PurpleGrey80
 import com.sangdo.repository.model.UrbanModel
 
 @Composable
@@ -38,7 +37,7 @@ fun DictionaryList(
         modifier = modifier
             .fillMaxSize()
             .systemBarsPadding()
-            .background(Pink80)
+            .background(PurpleGrey80)
     ) {
         items(list) { detail ->
             DictionaryRow(item = detail)

@@ -14,6 +14,7 @@ import com.google.android.gms.ads.AdView
 @Composable
 @SuppressLint("MissingPermission")
 fun AdBanner(
+    id: String,
     adRequest: AdRequest,
     modifier: Modifier = Modifier,
 ) {
@@ -23,7 +24,7 @@ fun AdBanner(
             .wrapContentHeight(),
         factory = { context ->
             AdView(context).apply {
-                adUnitId = "ca-app-pub-3940256099942544/9214589741" //"ca-app-pub-3926306702817572~3394052504"
+                adUnitId = id // "ca-app-pub-3940256099942544/9214589741"
                 setAdSize(AdSize.BANNER)
                 loadAd(adRequest)
             }
@@ -34,6 +35,9 @@ fun AdBanner(
 @Preview
 @Composable
 fun AdBannerPreview() {
-    AdBanner(adRequest = AdRequest.Builder().build())
+    AdBanner(
+        id = "ca-app-pub-3940256099942544/9214589741",
+        adRequest = AdRequest.Builder().build()
+    )
 }
 
