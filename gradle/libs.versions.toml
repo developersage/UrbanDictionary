@@ -2,16 +2,16 @@
 # API level
 minSdk = "28"
 targetSdk = "33"
-compileSdk = "34"
+compileSdk = "36"
 
 # Plug ins
-androidGradle = "8.3.1"
-kotlin = "1.9.0"
-hilt = "2.48"
+androidGradle = "8.13.2"
+kotlin = "2.1.0"
+hilt = "2.57.2"
 googleService = "4.4.1"
 googleCrashlytics = "2.9.9"
 playService = "23.0.0"
-googleKsp = "1.8.10-1.0.9"
+googleKsp = "2.1.0-1.0.29"
 
 # Dependencies - Bill of Materials
 googleBOM = "32.8.0"
@@ -35,6 +35,7 @@ moshi = "1.15.0"
 android-application = { id = "com.android.application", version.ref = "androidGradle" }
 android-library = { id = "com.android.library", version.ref = "androidGradle" }
 jetbrains-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 google-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 google-services = { id = "com.google.gms.google-services", version.ref = "googleService" }
 google-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "googleCrashlytics" }

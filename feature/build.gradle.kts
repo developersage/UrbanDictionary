@@ -4,6 +4,7 @@ plugins {
     kotlin("kapt")
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.google.services)
     alias(libs.plugins.google.crashlytics)
     alias(libs.plugins.google.hilt)
@@ -26,10 +27,9 @@ android {
 
     buildFeatures { compose = true }
     composeOptions { kotlinCompilerExtensionVersion = "1.5.0" }
-    kotlinOptions { jvmTarget = "17" }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_21
+        targetCompatibility = JavaVersion.VERSION_21
     }
 }
 
