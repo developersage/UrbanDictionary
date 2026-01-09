@@ -10,7 +10,7 @@ plugins {
     alias(libs.plugins.google.hilt)
 }
 
-val property = Properties()
+private val property = Properties()
     .apply { load(project.rootProject.file("apikeys.properties").inputStream()) }
 
 android {
