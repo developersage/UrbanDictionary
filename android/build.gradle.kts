@@ -43,7 +43,6 @@ android {
     }
     kapt { correctErrorTypes = true }
     buildFeatures { compose = true }
-    composeOptions { kotlinCompilerExtensionVersion = "1.5.0" }
 
     fun Packaging.packaging() {
         resources.excludes.add("/META-INF/{AL2.0,LGPL2.1}")

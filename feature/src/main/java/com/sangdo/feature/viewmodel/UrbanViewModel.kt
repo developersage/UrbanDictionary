@@ -22,12 +22,8 @@ class UrbanViewModel @Inject constructor(
     adRequest: AdRequest
 ) : SangdoViewModel() {
     val isLoading = mutableStateFlowOf(false)
-    val adState = mutableStateFlowOf<AdParams>(AdParams.Loading)
+    val adState = mutableStateFlowOf<AdParams>(AdParams.Ready(adUnitId, adRequest))
     val definitionList = mutableStateFlowOf<List<UrbanModel>>(emptyList())
-
-    init {
-        adState.next = AdParams.Ready(adUnitId, adRequest)
-    }
 
     fun search(word: String) {
         repository.getDefinition(word)

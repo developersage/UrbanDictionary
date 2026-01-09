@@ -10,7 +10,7 @@ plugins {
     alias(libs.plugins.google.hilt)
 }
 
-val property = Properties()
+private val property = Properties()
     .apply { load(project.rootProject.file("apikeys.properties").inputStream()) }
 
 android {
@@ -26,7 +26,6 @@ android {
     }
 
     buildFeatures { compose = true }
-    composeOptions { kotlinCompilerExtensionVersion = "1.5.0" }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
